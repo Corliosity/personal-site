@@ -1,0 +1,15 @@
+doctype html
+html(lang="en")
+	head
+		block headContent
+		title!= title
+		link(href='https://fonts.googleapis.com/css?family=Roboto:400,100,900,700',rel='stylesheet',type='text/css')
+		<!--cssmain begin-->
+		link(href='/assets/css/main.css', rel='stylesheet')
+		<!--cssmain end-->
+	body
+		div.wrapper
+			include nav.jade
+			.min-height-30.padding-20.padding-5-sides
+				block bodyContent
+		include footer.jade
