@@ -7,7 +7,25 @@ html(lang="en")
 		<!--cssmain begin-->
 		link(href='/assets/css/main.css', rel='stylesheet')
 		<!--cssmain end-->
+		include startup.jade
 	body
-		include nav.jade
+		section.background-content-co-winter
+			include nav.jade
+			div.row
+				#header.row
+					.column
+						h1.text-color-eyes.text-shadow-sweden Corliss Design &amp; Development
+				#intro.row
+					.medium-7.column
+						.panel
+							h3 Brief Introduction
+							p Hello, my name is Andrew Corliss.  Just your average web developer, who enjoys Hockey, Hiking, Skiing, and programming.
+							p But, talk is cheap.  You probably want to see just what I can do.  Right?  Well keep looking through this page and enjoy.
 		block bodyContent
+		include core.jade
+		script(type="script/javascript").
+			$(document).ready({
+				$(document).foundation();
+				$(document).foundation('topbar', 'reflow');
+			});
 		include footer.jade
