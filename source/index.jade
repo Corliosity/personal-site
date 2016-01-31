@@ -1,4 +1,47 @@
 extends ./tpl/layout
 
 block bodyContent
-	h1 Hello World
+	section.background-content-co-winter
+		div.row
+			#header.row
+				.column
+					h1.text-color-eyes.text-shadow-sweden Corliss Design &amp; Development
+		#intro.row
+			.medium-7.column
+				.panel
+					h3 Brief Introduction
+					p Hello, my name is Andrew Corliss.  Just your average web developer, who enjoys Hockey, Hiking, Skiing, and programming.
+					p But, talk is cheap.  You probably want to see just what I can do.  Right?  Well keep looking through this page and enjoy.
+	div.row.margin-20-top
+		a(name="skills")
+		#skills
+			h4 Skills
+			hr
+			ul.small-block-grid-1.medium-block-grid-3(data-equalizer)
+				each val in skillList
+					li.panel.margin-5-sides.margin-20-top
+						div.row
+							div.shape-5-circle.column.medium-centered.circle-position-above
+						div.padding-5.row.text-center
+							h5.text-color-darkocean= val.title
+							p= val.desc
+						div.row
+							div.columns.medium-centered
+								button.flat.expand= val.buttonTitle
+	div.row.margin-20-top
+		a(name="hobbies")
+		#hobbies
+			h4 Hobbies
+			hr
+			div.columns
+				div.row
+					h5 Skiing
+				div.row
+					h5 Hiking or Climbing
+				div.row
+					h5 Hockey
+	div.row.margin-20-top
+		a(name="work")
+		#work
+			h4 Work
+			hr
