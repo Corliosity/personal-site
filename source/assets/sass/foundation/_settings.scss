@@ -36,26 +36,11 @@ $include-html-grid-classes: $include-html-classes;
 $row-width: rem-calc(1000);
 $total-columns: 12;
 
-// Global
-
-// We use these to control various global styles
-$body-bg: #fff;
-// $body-font-color: #222;
-$body-font-family: Verdana, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-$body-font-weight: normal;
-$body-font-style: normal;
-$body-line-spacing: 0.2;
-
-// We use this to control font-smoothing
-$font-smoothing: antialiased;
-
-// We use these to control text direction settings
-// $text-direction: ltr;
-// $opposite-direction: right;
-// $default-float: left;
 // CUSTOM COLORS
+$transparent: rgba(0, 0, 0, 0);
 $ikea 		: #0000FF;
-$eyes		: #36DCED;
+$sweden     : #4C4CFF;
+$eyes		: #36C3ED;
 $darkocean	: #1A5175;
 $red  		: #FF0000;
 $blood 		: #7F0000;
@@ -65,12 +50,57 @@ $leaf 		: #99FF88;
 $casper 	: #FFFFFF;
 $cloud  	: #F2F2F2;
 $see    	: #CCCCCC;
+$unused		: #4C4C4C;
 $secondary  : #D3D3D3;
 $fiftyShade : #999999;
 $satan  	: #666666;
 $shadow 	: #5e5e5e;
 $vadar		: #333333;
 $void   	: #000000;
+
+$color-groups:
+$transparent,
+$eyes,
+$sweden,
+$ikea,
+$darkocean,
+$red,
+$blood,	
+$pink,
+$grass,
+$leaf,
+$casper,
+$cloud,
+$see,
+$unused,
+$secondary,
+$fiftyShade,
+$satan,
+$shadow,
+$vadar,
+$void;
+
+$color-names:
+transparent,
+eyes,
+sweden,
+ikea,
+darkocean,
+red,
+blood,	
+pink,
+grass,
+leaf,
+casper,
+cloud,
+see,
+unused,
+secondary,
+fiftyShade,
+satan,
+shadow,
+vadar,
+void;
 
 // We use these as default colors throughout
 $primary-color 	: $eyes;
@@ -80,6 +110,65 @@ $success-color 	: $grass;
 $warning-color 	: $blood;
 $info-color 	: $ikea;
 
+// BUTTON COLORS for _buttons-ac.mixin
+$button-primary-background-color: $primary-color;
+$button-primary-gradient-color-start: $ikea;
+$button-primary-gradient-color-stop: $primary-color;
+$button-primary-border-color: $darkocean;
+$button-primary-letterpress-color: $darkocean;
+$button-secondary-background-color: $secondary;
+$button-secondary-gradient-color-start: lighten($secondary, 35%);
+$button-secondary-gradient-color-stop: lighten($secondary, 10%);
+$button-secondary-border-color: ligthen($secondary, 10%);
+$button-secondary-letterpress-color: darken($secondary, 10%);
+$button-success-background-color: lighten($grass, 10%);
+$button-success-gradient-color-start: lighten($grass, 35%);
+$button-success-gradient-color-stop: lighten($grass, 10%);
+$button-success-border-color: $grass;
+$button-success-letterpress-color: darken($grass, 10%);
+$button-alert-background-color: lighten($blood, 10%);
+$button-alert-gradient-color-start: lighten($blood, 35%);
+$button-alert-gradient-color-stop: lighten($blood, 10%);
+$button-alert-border-color: $blood;
+$button-alert-letterpress-color: darken($blood, 10%);
+$button-font-color-alt: $casper !default;
+$button-transparent-color: transparent;
+
+// FOOTER colors
+$footer-background-color : $vadar;
+$footer-border-color : darken($satan, 15%);
+$footer-primary-color : $fiftyShade;
+$footer-secondary-color : $satan;
+$footer-accent-color : $see;
+
+
+// Global
+
+// We use these to control various global styles
+$body-bg: $transparent;
+// $body-font-color: $transparent;
+$body-font-family: Arial, sans-serif;
+$body-font-weight: normal;
+$body-font-style: normal;
+$body-font-color: $shadow;
+
+$font-roboto-name: 'roboto';
+$font-roboto: $font-roboto-name, $body-font-family;
+
+// We use this to control font-smoothing
+$font-smoothing: antialiased;
+$font-speak: none;
+$font-weight-normal: $body-font-weight;
+$font-style-normal: $body-font-style;
+$font-line-height: 1;
+$font-variant: normal;
+$font-text-transform: none;
+
+// We use these to control text direction settings
+$text-direction: ltr;
+$opposite-direction: right;
+$default-float: left;
+
 // We use these to make sure border radius matches unless we want it different.
 $global-radius: 3px;
 $global-rounded: 1000px;
@@ -88,15 +177,21 @@ $global-rounded: 1000px;
 // $shiny-edge-size: 0 1px 0;
 // $shiny-edge-color: rgba(#fff, .5);
 // $shiny-edge-active-color: rgba(#000, .2);
-
-// $column-gutter: rem-calc(30);
+$column-gutter-value: 20;
+$column-gutter: rem-calc($column-gutter-value);
 
 // Media Query Ranges
-$small-range: (0em, 40em);
-$medium-range: (40.063em, 64em);
-$large-range: (64.063em, 90em);
+// $small-range: (0em, 40em);
+// $medium-range: (40.063em, 64em);
+// $large-range: (64.063em, 90em);
 // $xlarge-range: (90.063em, 120em);
 // $xxlarge-range: (120.063em, 99999999em);
+
+// True Media Query Ranges
+$xsmall-range: (0em, 27.75em);
+$small-range: (0em, 42.500em);
+$medium-range: (42.563em, 53.125em);
+$large-range: (53.188em, 90em);
 
 $screen: "only screen";
 
@@ -119,32 +214,64 @@ $large-only: "#{$screen} and (min-width:#{lower-bound($large-range)}) and (max-w
 // $xxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (max-width:#{upper-bound($xxlarge-range)})";
 
 // Legacy
-// $small: $medium-up;
-// $medium: $medium-up;
-// $large: $large-up;
+$small: $medium-up;
+$medium: $medium-up;
+$large: $large-up;
 
 //We use this as cursors values for enabling the option of having custom cursors in the whole site's stylesheet
-// $cursor-crosshair-value: crosshair;
-// $cursor-default-value: default;
-// $cursor-pointer-value: pointer;
-// $cursor-help-value: help;
-// $cursor-text-value: text;
+$cursor-crosshair-value: crosshair;
+$cursor-default-value: default;
+$cursor-pointer-value: pointer;
+$cursor-help-value: help;
+$cursor-text-value: text;
+
+//
+// Z-INDEX MAPPING
+//
+$z-index-top: 150; //Tooltips
+$z-index-primary: 105; //Modal
+$z-index-elevated: 100; //Modal Background
+$z-index-prioriyt: 25; //Sticky and Mobile Nav
+$z-index-prominent: 20; //Stick and Mobile Nav
+$z-index-high: 15;
+$z-index-mid: 10;
+$z-index-low: 5;
+$z-index-auto: auto;
 
 //
 // TYPOGRAPHY
 //
 
 // $include-html-type-classes: $include-html-classes;
+// Text alignment Class Names
+$align-class-names:
+	small-only,
+	small,
+	medium-only,
+	medium,
+	large-only,
+	large;
+
+$align-class-breakpoints:
+	$small-only,
+	$small-up,
+	$medium-only,
+	$medium-up,
+	$large-only,
+	$large-up;
 
 // We use these to control header font styles
-$header-font-family: 'Roboto', 'Helvetica', Arial, sans-serif;;
-// $header-font-weight: normal;
-// $header-font-style: normal;
-$header-font-color: #222;
-// $header-line-height: 1.4;
-// $header-top-margin: .2rem;
-// $header-bottom-margin: .5rem;
-// $header-text-rendering: optimizeLegibility;
+$text-highlight-color: $eyes;
+$text-color-light: $casper;
+$text-color-dark: $shadow;
+$header-font-family: $font-roboto;
+$header-font-weight: $font-weight-normal;
+$header-font-style: $font-style-normal;
+$header-font-color: $text-color-dark;
+$header-line-height: 1.4;
+$header-top-margin: .2rem;
+$header-bottom-margin: .5rem;
+$header-text-rendering: optimizeLegibility;
 
 // We use these to control header font sizes
 $h1-font-size: rem-calc(44);
@@ -155,19 +282,19 @@ $h4-font-size: rem-calc(23);
 // $h6-font-size: 1rem;
 
 // These control how subheaders are styled.
-// $subheader-line-height: 1.4;
-// $subheader-font-color: scale-color($header-font-color, $lightness: 35%);
-// $subheader-font-weight: normal;
-// $subheader-top-margin: .2rem;
-// $subheader-bottom-margin: .5rem;
+$subheader-line-height: 1.4;
+$subheader-font-color: scale-color($header-font-color, $lightness: 35%);
+$subheader-font-weight: $font-weight-normal;
+$subheader-top-margin: .2rem;
+$subheader-bottom-margin: .5rem;
 
 // A general <small> styling
 $small-font-size: 60%;
 $small-font-color: scale-color($header-font-color, $lightness: 35%);
 
 // We use these to style paragraphs
-$paragraph-font-family: inherit;
-$paragraph-font-weight: normal;
+$paragraph-font-family: $body-font-family;
+$paragraph-font-weight: $font-weight-normal;
 $paragraph-font-size: 1rem;
 $paragraph-line-height: 1.6;
 $paragraph-margin-bottom: rem-calc(20);
@@ -177,9 +304,9 @@ $paragraph-margin-bottom: rem-calc(20);
 // $paragraph-text-rendering: optimizeLegibility;
 
 // We use these to style <code> tags
-// $code-color: scale-color($alert-color, $lightness: -27%);
-// $code-font-family: Consolas, 'Liberation Mono', Courier, monospace;
-// $code-font-weight: bold;
+$code-color: scale-color($alert-color, $lightness: -27%);
+$code-font-family: Consolas, 'Liberation Mono', Courier, monospace;
+$code-font-weight: bold;
 
 // We use these to style anchors
 // $anchor-text-decoration: none;
@@ -193,22 +320,22 @@ $hr-border-color: #ddd;
 $hr-margin: rem-calc(20);
 
 // We use these to style lists
-// $list-style-position: outside;
-// $list-side-margin: 1.1rem;
-// $list-ordered-side-margin: 1.4rem;
-// $list-side-margin-no-bullet: 0;
-// $list-nested-margin: rem-calc(20);
+$list-style-position: outside;
+$list-side-margin: 1.1rem;
+$list-ordered-side-margin: 1.4rem;
+$list-side-margin-no-bullet: 0;
+$list-nested-margin: rem-calc(20);
 // $definition-list-header-weight: bold;
 // $definition-list-header-margin-bottom: .3rem;
 // $definition-list-margin-bottom: rem-calc(12);
 
 // We use these to style blockquotes
-// $blockquote-font-color: scale-color($header-font-color, $lightness: 35%);
-// $blockquote-padding: rem-calc(9 20 0 19);
-// $blockquote-border: 1px solid #ddd;
-// $blockquote-cite-font-size: rem-calc(13);
-// $blockquote-cite-font-color: scale-color($header-font-color, $lightness: 23%);
-// $blockquote-cite-link-color: $blockquote-cite-font-color;
+$blockquote-font-color: scale-color($header-font-color, $lightness: 35%);
+$blockquote-padding: rem-calc(9 20 0 19);
+$blockquote-border: 1px solid #ddd;
+$blockquote-cite-font-size: rem-calc(13);
+$blockquote-cite-font-color: scale-color($header-font-color, $lightness: 23%);
+$blockquote-cite-link-color: $blockquote-cite-font-color;
 
 // Acronym styles
 // $acronym-underline: 1px dotted #ddd;
@@ -350,42 +477,45 @@ $button-med: rem-calc(16);
 
 // We use this to control the display property.
 $button-display: inline-block;
-// $button-margin-bottom: rem-calc(20);
+$button-margin-bottom: rem-calc(20);
 
 // We use these to control button text styles.
-// $button-font-family: $body-font-family;
-// $button-font-color: #fff;
-// $button-font-color-alt: #333;
-// $button-font-tny: rem-calc(11);
-// $button-font-sml: rem-calc(13);
-// $button-font-med: rem-calc(16);
-// $button-font-lrg: rem-calc(20);
-// $button-font-weight: normal;
-// $button-font-align: center;
+$button-font-family: $body-font-family;
+$button-font-color: #fff;
+$button-font-color-alt: #333;
+$button-font-tny: rem-calc(11);
+$button-font-sml: rem-calc(13);
+$button-font-med: rem-calc(16);
+$button-font-lrg: rem-calc(20);
+$button-font-weight: normal;
+$button-font-align: center;
 
 // We use these to control various hover effects.
-// $button-function-factor: -20%;
+$button-function-factor: -20%;
 
 // We use these to control button border styles.
-// $button-border-width: 0px;
-// $button-border-style: solid;
-// $bg: $primary-color;
+$button-border-width: 1px;
+$button-border-style: solid;
+$bg: $primary-color;
 // $button-border-color: scale-color($bg, $lightness: $button-function-factor);
+$button-border-color: $button-primary-border-color;
+$button-hover-color: scale-color($button-primary-background-color, $lightness: $button-function-factor) !default;
+$button-letterpress-color: $button-primary-letterpress-color;
 
 // We use this to set the default radius used throughout the core.
-// $button-radius: $global-radius;
-// $button-round: $global-rounded;
+$button-radius: $global-radius;
+$button-round: $global-rounded;
 
 // We use this to set default opacity for disabled buttons.
-// $button-disabled-opacity: 0.7;
+$button-disabled-opacity: 0.6;
 
 // Button Groups
 
 // $include-html-button-classes: $include-html-classes;
 
 // Sets the margin for the right side by default, and the left margin if right-to-left direction is used
-// $button-bar-margin-opposite: rem-calc(10);
-// $button-group-border-width: 1px;
+$button-bar-margin-opposite: rem-calc(10);
+$button-group-border-width: 1px;
 
 // Clearing
 

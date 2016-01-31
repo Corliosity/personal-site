@@ -1,0 +1,35 @@
+.background-image,
+.background-content-co-winter,
+.background-content-se-summer,
+.background-content-co-hockey {
+	background-repeat: no-repeat;
+	background-clip: border-box;
+    position: relative;
+    background-color: transparent;
+}
+
+.background-content-co-winter:before,
+.background-content-se-summer:before,
+.background-content-co-hockey:before {
+	content: " ";
+	position: absolute;
+	content: " ";
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+}
+
+.background-content-co-winter:before {
+	background-image:radial-gradient(rgba(255,255,255,0.6), rgba(0,0,0,0.6)), url('/assets/img/background/co-winter.jpg');
+}
+
+@for $i from 1 through length($color-groups) {
+  .background-color-#{nth($color-names, $i)} {
+    background: nth($color-groups, $i) !important;
+  }
+}

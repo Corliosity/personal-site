@@ -1,39 +1,44 @@
-@import "mixins";
-@include grid-spaces();
- 
-/* General Styling */
-.wrapper {
-	position: relative;
-	min-height:100%;
-}
-
-.footer {
-	background-color: #333;
-	padding: 1rem;
-}
+@include grid-spaces;
+@include shape-classes;
+// Specific Styles AC Personal
+//
+// Style that will not be re-used across projects can go here
+//
 .title-row {
 	width: 100%;
-	background: #eaeaea;
+	background: $casper;
 	margin-top: -1em;
 }
 
+.circle-position-above {
+	position: relative;
+	top: -35px;
+}
+
 /* Foooter */
-.footer {
-	ul {
-		list-style: none;
-		li {
-			float: left;
-		}
-		.icon:before {
-			font-size: rem-calc(24);
-			color: #f2f2f2;
-		}
-		.icon.disabled:before {
-			color: #4c4c4c;
+.footer, footer {
+	position: absolute;
+	background-color: $vadar;
+	padding-top: 1rem;
+	width: 100%;
+	display: block;
+	div {
+		ul {
+			list-style: none;
+			li {
+				float: left;
+			}
+			.icon:before {
+				font-size: rem-calc(24);
+				color: $cloud;
+			}
+			.icon.disabled:before {
+				color: $unused;
+			}
 		}
 	}
 	.copyright {
-		color: #f2f2f2;
+		color: $cloud;
 	}
 
 }
