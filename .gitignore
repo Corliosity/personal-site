@@ -37,3 +37,4 @@ node_modules
 
 # Ignore CSS/SASS builds
 .sass-cache
+**/*.css
