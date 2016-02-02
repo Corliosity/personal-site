@@ -40,7 +40,8 @@ $total-columns: 12;
 $transparent: rgba(0, 0, 0, 0);
 $ikea 		: #0000FF;
 $sweden     : #4C4CFF;
-$eyes		: #36C3ED;
+$eyes		: #037DA2;
+$roblowe	: #36C3ED;
 $darkocean	: #1A5175;
 $red  		: #FF0000;
 $blood 		: #7F0000;
@@ -49,6 +50,7 @@ $grass 		: #005214;
 $leaf 		: #99FF88;
 $casper 	: #FFFFFF;
 $cloud  	: #F2F2F2;
+$firstbank	: #FBFBFB;
 $see    	: #CCCCCC;
 $unused		: #4C4C4C;
 $secondary  : #D3D3D3;
@@ -66,7 +68,7 @@ $transparent4 : rgba(255, 255, 255, 0.6);
 $transparent5 : rgba(255, 255, 255, 0.7);
 $transparent6 : rgba(255, 255, 255, 0.8);
 $transparent7 : rgba(255, 255, 255, 0.9);
-$transparent8 : rgba(255, 255, 255, 0.1);
+$transparent0 : rgba(255, 255, 255, 0.1);
 
 $color-groups:
 $transparent,
@@ -78,6 +80,7 @@ $transparent5,
 $transparent6,
 $transparent7,
 $eyes,
+$roblowe,
 $sweden,
 $ikea,
 $darkocean,
@@ -88,6 +91,7 @@ $grass,
 $leaf,
 $casper,
 $cloud,
+$firstbank,
 $see,
 $unused,
 $secondary,
@@ -107,6 +111,7 @@ transparent5,
 transparent6,
 transparent7,
 eyes,
+roblowe,
 sweden,
 ikea,
 darkocean,
@@ -117,6 +122,7 @@ grass,
 leaf,
 casper,
 cloud,
+firstbank,
 see,
 unused,
 secondary,
@@ -139,7 +145,7 @@ $button-primary-background-color: $primary-color;
 $button-primary-gradient-color-start: $ikea;
 $button-primary-gradient-color-stop: $primary-color;
 $button-primary-border-color: $darkocean;
-$button-primary-letterpress-color: $darkocean;
+$button-primary-letterpress-color: $firstbank;
 $button-secondary-background-color: $secondary;
 $button-secondary-gradient-color-start: lighten($secondary, 35%);
 $button-secondary-gradient-color-stop: lighten($secondary, 10%);

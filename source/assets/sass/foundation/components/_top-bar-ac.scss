@@ -12,7 +12,7 @@
 $include-html-top-bar-classes: $include-html-classes !default;
 
 // Background color for the top bar
-$topbar-bg-color: $transparent8 !default;
+$topbar-bg-color: $transparent3 !default;
 $topbar-bg: $topbar-bg-color !default;
 
 // Height and margin
@@ -108,8 +108,6 @@ $topbar-arrows: true !default; //Set false to remove the triangle icon from the 
     /* Wrapped around .top-bar to contain to grid width */
     .contain-to-grid {
       width: 100%;
-      background: $topbar-bg;
-
       .top-bar { margin-bottom: $topbar-margin-bottom; }
     }
 
