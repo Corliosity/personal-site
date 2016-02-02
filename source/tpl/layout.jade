@@ -14,18 +14,20 @@ html(lang="en")
 			div.row
 				#header.row
 					.column
-						h1.text-color-eyes.text-shadow-sweden Corliss Design &amp; Development
+						h1.text-color-roblowe.text-shadow-sweden Corliss Design &amp; Development
 				#intro.row
 					.medium-7.column
 						.panel
-							h3 Brief Introduction
-							p Hello, my name is Andrew Corliss.  Just your average web developer, who enjoys Hockey, Hiking, Skiing, and programming.
+							h3 Andrew Corliss
+							p email : 
+								a(href='#contact') andrew.corliss@gmail.com
+							p phone : 
+								a(href="tel:") +1 720 560 9372
+							p.text-bold Intro
+							p Just your average web developer, who enjoys Hockey, Hiking, Skiing, and programming.
 							p But, talk is cheap.  You probably want to see just what I can do.  Right?  Well keep looking through this page and enjoy.
 		block bodyContent
 		include core.jade
-		script(type="script/javascript").
-			$(document).ready({
-				$(document).foundation();
-				$(document).foundation('topbar', 'reflow');
-			});
 		include footer.jade
+		script.
+			$(document).foundation();

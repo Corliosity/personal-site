@@ -11,12 +11,17 @@ block bodyContent
 					li.panel.margin-5-sides.margin-20-top
 						div.row
 							div.shape-5-circle.column.medium-centered.small-centered.circle-position-above
-						div.padding-5.row.text-center
+						div.padding-5.row.text-center.neg-margin
 							h5.text-color-darkocean= val.title
 							p= val.desc
 						div.row
-							div.columns.medium-centered
+							div.medium-8.columns.medium-centered
 								button.flat.expand= val.buttonTitle
+	div.row.margin-20-top
+		a(name="work")
+		#work
+			h4 Work
+			hr
 	div.row.margin-20-top
 		a(name="hobbies")
 		#hobbies
@@ -29,11 +34,6 @@ block bodyContent
 					h5 Hiking or Climbing
 				div.row
 					h5 Hockey
-	div.row.margin-20-top
-		a(name="work")
-		#work
-			h4 Work
-			hr
 	div.row.margin-20-top
 		a(name="contact")
 		#contact
