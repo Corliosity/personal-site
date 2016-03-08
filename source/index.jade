@@ -16,26 +16,85 @@ block bodyContent
 							p= val.desc
 						div.row
 							div.medium-8.columns.medium-centered
-								button.flat.expand= val.buttonTitle
-	div.row.margin-20-top
-		a(name="work")
-		#work
-			h4 Work
-			hr
-	div.row.margin-20-top
-		a(name="hobbies")
-		#hobbies
-			h4 Hobbies
-			hr
-			div.columns
-				div.row
-					h5 Skiing
-				div.row
-					h5 Hiking or Climbing
-				div.row
-					h5 Hockey
-	div.row.margin-20-top
+								button.flat.expand(disabled)= val.buttonTitle
+	.background-color-pond.contain-to-grid
+		.row.margin-20-top.text-color-vadar
+			a(name="work")
+			#work.padding-5
+				h4 Important Work
+				hr
+				ul.work-style
+					each company in work
+						li
+							div.columns.padding-10-top
+								h5.text-bold Company - #{company.company}
+								h6 Job Title - #{company.position}
+								hr
+								p.text-italic What I did:
+									p=company.desc
+								p.text-italic Languages: #{company.skills}
+								a= company.website
+	#hobbies
+		.row.margin-20-top
+			a(name="hobbies")
+			#hobbies
+				h4 Hobbies
+				hr
+		.row
+			.medium-1.column.medium-offset-4.padding-0
+				a(href="javascript:void(0);", data-hobby="hiking").hobby-icon: span.icon.icon-mountains.text-size-25
+			.medium-1.column.padding-0
+				a(href="javascript:void(0);", data-hobby="hockey").hobby-icon: span.icon.icon-hockey.text-size-25
+			.medium-1-column.end.padding-0
+				a(href="javascript:void(0);", data-hobby="camera").hobby-icon: span.icon.icon-camera.text-size-25
+	.background-content.se-summer.background-show.hobby.hide#hiking
+		.row
+			.medium-8.column.medium-centered
+				.panel.background-color-transparent4
+					p I like hiking...hike, hike, hike
+	.background-content.co-hockey.background-show.hobby.hide#hockey
+		.row
+			.medium-8.column.medium-centered
+				.panel.background-color-transparent4
+					p I like hiking...hike, hike, hike
+	.row.min-height-70.margin-20-top
 		a(name="contact")
 		#contact
 			h4 Contact
 			hr
+			form
+				.medium-10.columns.medium-offset-1
+					div.row.padding-15-top
+						div.medium-2.columns.form-label
+							label(for='name') Name
+						div.medium-8.columns.end
+							input(type='text', placeholder='name', name='name')
+							div.error
+								p.text-color-blood.text-italic *Required
+					div.row.padding-15-top
+						div.medium-2.columns.form-label
+							label(for='email') Email
+						div.medium-8.columns.end
+							input(type='email', placeholder='email', name='email')
+							div.error
+								p.text-color-blood.text-italic *Required
+					div.row.padding-15-top
+						div.medium-2.columns.form-label
+							label(for='phone') Phone
+						div.medium-8.columns.end
+							input(type='phone', placeholder='phone', name='phone')
+							div.error
+								p.text-color-blood.text-italic *Required
+					div.row.padding-15-top
+						div.medium-2.columns.form-label
+							label(for='message') Brief Message
+						div.medium-8.columns
+							textarea(type='text', id='message', name='message', placeholder='Place a breif message here', rows='3')
+						div.medium-2.end.columns.from-label
+							small.text-italic optional
+					div.row.padding-15-top
+						div.medium-6.columns.medium-offset-2.end
+							button(type='submit', value='Send an Email') Send a Message
+			#thank-you.row
+				.columns
+					p.margin-20 #{success}

@@ -1,3 +1,12 @@
+@mixin prefix($property, $value, $prefixes: (ms, moz, webkit)) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+ 
+  // Output standard non-prefixed declaration
+  #{$property}: $value;
+}
+
 @import "foundation/components/shapes";
 
 /* MIXIN FUNCTIONS */
@@ -86,6 +95,17 @@
       margin-right: $rem;
     }
 	}
+}
+
+@mixin minimal-height() {
+  @for $i from 1 through 10 {
+    $rem: #{($i * 10) / 2 + "rem"};
+    $class: #{$i * 10};
+
+    .min-height-#{$class} {
+      min-height: $rem;
+    }
+  }
 }
 
 //

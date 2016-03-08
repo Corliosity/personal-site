@@ -1,9 +1,9 @@
 var express = require('express');
 var router 	= express.Router();
+var bodyParser = require('body-parser');
 
 // middleware that is specific to this router
-router.use(function timeLog(req, res, next) {
-  console.log('Time: ', Date.now());
+router.use(function(req, res, next) {
   next();
 });
 
@@ -34,9 +34,36 @@ router.get('/', function(req, res) {
 			desc: 'Java != JavaScript.\nNow that is over let us talk about the role of JS in development.',
 			buttonTitle: 'See More'
 		}
-	]
+	];
 
-	res.render('index.jade', {skillList: skillsList});
+	var workList = [
+		{
+			id: 1,
+			position: 'User interface Developer',
+			company: 'FirstBank',
+			website: 'https://www.efirstbank.com',
+			desc: '',
+			skills: 'JavaScript, SASS, HTML, Apache, XML/XSLT'
+		},
+		{
+			id: 2,
+			position: 'Freelance - Mobile and Web Developer',
+			company: 'Freelance',
+			desc: '',
+			skills: 'Objective-C, C++, JavaScript, XML, CSS'
+		}
+	];
+
+	res.render('index.jade', {skillList: skillsList, work: workList});
+});
+
+router.post('/contact', function(req, res) {
+	var contactName = req.body.name;
+	var contactEmail = req.body.email;
+	var contactPhone = req.body.phone;
+	/* Will then need to update a database */
+	/* After DB created create a job so once a day an update will send to email of all contacts (if new ones exist) */
+	res.send({success: 'Thank you ' + contactName + ', your message has been recieved.  Please expect a reply to ' + contactEmail +' at some point in the next few days'});
 });
 
 module.exports = router;

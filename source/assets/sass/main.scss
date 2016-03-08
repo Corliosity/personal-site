@@ -5,6 +5,8 @@
 // Make sure the charset is set appropriately
 @charset "UTF-8";
 
+@import "foundation/components/global";
+@import "foundation/functions";
 @import "foundation/settings";
 @import "mixins";
 

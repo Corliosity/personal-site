@@ -1,18 +1,11 @@
 @include grid-spaces;
 @include shape-classes;
+@include minimal-height;
+
 // Specific Styles AC Personal
 //
 // Style that will not be re-used across projects can go here
 //
-.title-row {
-	width: 100%;
-	background: $casper;
-	margin-top: -1em;
-}
-
-.contain-to-grid.background-color-transparent3 {
-	position: inherit;
-}
 
 .circle-position-above {
 	position: relative;
@@ -22,6 +15,60 @@
 .neg-margin {
 	margin-top: -1rem !important;
 }
+
+.padding-0 {
+	padding: 0 !important;
+}
+
+a:hover {
+	@include single-transition(color, 300ms, ease-in);
+}
+
+ul {
+	&.work-style {
+		list-style: none;
+		li {
+			padding-top: 0.5rem;
+		}
+	}
+}
+
+#thank-you {
+	display: none;
+}
+
+form {
+	input {
+		width: 100%;
+		padding: 0.875rem 0.5rem 0.5rem 0.5rem;
+		&.err-highlight {
+			border: 1px solid $blood;
+			background: $brain;
+		}
+	}
+	textarea {
+		width: 100%;
+		padding: 0.875rem 0.5rem 0.5rem 0.5rem;
+	}
+	@media #{$medium-up} {
+		.form-label {
+			text-align: right !important;
+			padding: 0.875rem 0 0 0.5rem;
+		}
+	}
+	.error {
+		display: none;
+		p {
+			margin: 0;
+		}
+		&.err-msg {
+			display: block;
+			padding: 0;
+			margin: 0;
+		}
+	}
+}
+
 
 /* Foooter */
 .footer, footer {

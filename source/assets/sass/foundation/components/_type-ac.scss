@@ -2,7 +2,7 @@
 // foundation.zurb.com
 // Licensed under MIT Open Source
 
-@import "global";
+// // @import "global";
 
 $include-html-type-classes: $include-html-classes !default;
 
@@ -491,6 +491,7 @@ $align-class-breakpoints:
 
   }
 }
+
 @for $i from 1 through length($color-groups) {
   .text-color-#{nth($color-names, $i)} {
     color: nth($color-groups, $i) !important;
@@ -499,4 +500,21 @@ $align-class-breakpoints:
   .text-shadow-#{nth($color-names, $i)} {
     text-shadow: nth($color-groups, $i) -2px -1px 6px;
   }
+}
+
+@for $i from 16 through 32 {
+  $calcVal : $i * 2;
+  $my-values: rem-calc($calcVal);
+
+  .text-size-#{$i} {
+    font-size: #{$my-values};
+  }
+}
+
+.text-bold {
+  font-weight: bold !important;
+}
+
+.text-italic {
+  font-style: italic !important;
 }

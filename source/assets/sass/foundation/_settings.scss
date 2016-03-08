@@ -10,7 +10,7 @@
 $rem-base: 16px;
 
 // Allows the use of rem-calc() or lower-bound() in your settings
-@import "functions";
+// @import "functions";
 
 // The default font-size is set to 100% of the browser style sheet (usually 16px)
 // for compatibility with browser-based text zoom or user-set defaults.
@@ -37,16 +37,18 @@ $row-width: rem-calc(1000);
 $total-columns: 12;
 
 // CUSTOM COLORS
-$transparent: rgba(0, 0, 0, 0);
+$ghost		: rgba(0, 0, 0, 0);
 $ikea 		: #0000FF;
 $sweden     : #4C4CFF;
 $eyes		: #037DA2;
 $roblowe	: #36C3ED;
+$pond 		: #EBF6FF; // or #F5FFFF
 $darkocean	: #1A5175;
-$red  		: #FF0000;
+$vampire	: #FF0000;
 $blood 		: #7F0000;
-$pink 		: #FFACAF;
+$brain 		: #FFACAF;
 $grass 		: #005214;
+$meadow		: #BDFFCA;
 $leaf 		: #99FF88;
 $casper 	: #FFFFFF;
 $cloud  	: #F2F2F2;
@@ -71,7 +73,7 @@ $transparent7 : rgba(255, 255, 255, 0.9);
 $transparent0 : rgba(255, 255, 255, 0.1);
 
 $color-groups:
-$transparent,
+$ghost,
 $transparent1,
 $transparent2,
 $transparent3,
@@ -83,11 +85,13 @@ $eyes,
 $roblowe,
 $sweden,
 $ikea,
+$pond,
 $darkocean,
-$red,
+$vampire,
 $blood,	
-$pink,
+$brain,
 $grass,
+$meadow,
 $leaf,
 $casper,
 $cloud,
@@ -102,7 +106,7 @@ $vadar,
 $void;
 
 $color-names:
-transparent,
+ghost,
 transparent1,
 transparent2,
 transparent3,
@@ -114,11 +118,13 @@ eyes,
 roblowe,
 sweden,
 ikea,
+pond,
 darkocean,
-red,
+vampire,
 blood,	
-pink,
+brain,
 grass,
+meadow,
 leaf,
 casper,
 cloud,
@@ -175,8 +181,8 @@ $footer-accent-color : $see;
 // Global
 
 // We use these to control various global styles
-$body-bg: $transparent;
-// $body-font-color: $transparent;
+$body-bg: $ghost;
+// $body-font-color: $ghost;
 $body-font-family: Arial, sans-serif;
 $body-font-weight: normal;
 $body-font-style: normal;
@@ -1472,10 +1478,13 @@ $icon-pause:		"\e806";
 $icon-stop:			"\e807";
 $icon-volume-high:	"\e808";
 $icon-volume-mute:	"\e809";
-$icon-mail2:		"\e80a";
-$icon-facebook2:	"\e80b";
+$icon-mail:			"\e80a";
+$icon-facebook:		"\e80b";
 $icon-instagram:	"\e80c";
 $icon-twitter:		"\e80d";
 $icon-feed2:		"\e80e";
-$icon-youtube3: 	"\e80f";
-$icon-github4:		"\e810";
+$icon-youtube:	 	"\e80f";
+$icon-github:		"\e810";
+$icon-mountains:	"\e901";
+$icon-hockey:		"\e900";
+$icon-camera:		"\e90a";

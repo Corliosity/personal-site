@@ -1,5 +1,5 @@
 @font-face {
-	font-family: 'icomoon';
+	font-family: 'corliss-icon';
 	src:url('../fonts/icomoon.eot?tn76vi');
 	src:url('../fonts/icomoon.eot?tn76vi#iefix') format('embedded-opentype'),
 		url('../fonts/icomoon.ttf?tn76vi') format('truetype'),
@@ -10,7 +10,7 @@
 }
 
 [class^="icon-"], [class*=" icon-"] {
-	font-family: 'icomoon';
+	font-family: 'corliss-icon';
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
@@ -22,7 +22,25 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+span {
+	&.icon-mountains,
+	&.icon-hockey,
+	&.icon-camera {
+		height: 2rem;
+		border: 1px solid $ikea;
+		padding: 8.3%;
+	}
+	&:hover {
+		@include single-transition(color, 300ms, ease-in);
+		&.icon-mountains:before,
+		&.icon-hockey:before,
+		&.icon-camera:before {
+			color: $darkocean;
+			@include single-transition(color, 300ms, ease-in);
+		}
+	}
 
+}
 .icon-home:before {
 	content: $icon-home;
 }
@@ -65,11 +83,11 @@
 .icon-volume-mute:before {
 	content: $icon-volume-mute;
 }
-.icon-mail2:before {
-	content: $icon-mail2;
+.icon-mail:before {
+	content: $icon-mail;
 }
-.icon-facebook2:before {
-	content: $icon-facebook2;
+.icon-facebook:before {
+	content: $icon-facebook;
 }
 .icon-instagram:before {
 	content: $icon-instagram;
@@ -80,9 +98,18 @@
 .icon-feed2:before {
 	content: $icon-feed2;
 }
-.icon-youtube3:before {
-	content: $icon-youtube3;
+.icon-youtube:before {
+	content: $icon-youtube;
 }
-.icon-github4:before {
-	content: $icon-github4;
+.icon-github:before {
+	content: $icon-github;
+}
+.icon-mountains:before {
+	content: $icon-mountains;
+}
+.icon-hockey:before {
+	content: $icon-hockey;
+}
+.icon-camera:before {
+	content: $icon-camera;
 }

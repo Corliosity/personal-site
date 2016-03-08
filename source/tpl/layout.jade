@@ -9,7 +9,7 @@ html(lang="en")
 		<!--cssmain end-->
 		include startup.jade
 	body
-		section.background-content-co-winter
+		section.main-bg.background-content
 			include nav.jade
 			div.row
 				#header.row
@@ -17,13 +17,13 @@ html(lang="en")
 						h1.text-color-roblowe.text-shadow-sweden Corliss Design &amp; Development
 				#intro.row
 					.medium-7.column
-						.panel
+						.panel.background-color-transparent6
 							h3 Andrew Corliss
 							p email : 
 								a(href='#contact') andrew.corliss@gmail.com
 							p phone : 
 								a(href="tel:") +1 720 560 9372
-							p.text-bold Intro
+							p.text-bold Let me introduce myself
 							p Just your average web developer, who enjoys Hockey, Hiking, Skiing, and programming.
 							p But, talk is cheap.  You probably want to see just what I can do.  Right?  Well keep looking through this page and enjoy.
 		block bodyContent
@@ -31,3 +31,4 @@ html(lang="en")
 		include footer.jade
 		script.
 			$(document).foundation();
+			background.init(['hockey', 'se-summer']);
